@@ -1,0 +1,24 @@
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/tableau.js"></script>
+
+
+<div id="tableauViz" style="display:block;height:10px;width"></div>
+
+
+ <script>
+var placeholderDiv = document.getElementById("tableauViz");
+		var url = "https://10ay.online.tableau.com/#/site/dhvani/views/Book1/Dashboard1?:iid=1";
+		var options = {
+			width: placeholderDiv.offsetWidth,
+			height: placeholderDiv.offsetHeight,
+			hideTabs: true,
+			hideToolbar: true,
+			onFirstInteractive: function () {
+				workbook = viz.getWorkbook();
+				activeSheet = workbook.getActiveSheet();
+			}
+		};
+		viz = new tableau.Viz(placeholderDiv, url, options);
+		$("#tableauViz").children().height("800px").width("640px");
+</script>

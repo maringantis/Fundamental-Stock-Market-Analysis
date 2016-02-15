@@ -1,0 +1,24 @@
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/tableau.js"></script>
+
+
+<div id="analysistableauViz" style="display:block;"></div>
+
+
+ <script>
+var placeholderDiv = document.getElementById("analysistableauViz");
+		var url = "https://10ay.online.tableau.com/#/site/dhvani/views/Book1/2013HealthCareAnalysis?:iid=1";
+		var options = {
+			width: placeholderDiv.offsetWidth,
+			height: placeholderDiv.offsetHeight,
+			hideTabs: true,
+			hideToolbar: true,
+			onFirstInteractive: function () {
+				workbook = viz.getWorkbook();
+				activeSheet = workbook.getActiveSheet();
+			}
+		};
+		viz = new tableau.Viz(placeholderDiv, url, options);
+		$("#analysistableauViz").children().height("800px").width("980px");
+</script>
