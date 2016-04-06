@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stock Market Analysis</title>
+<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<style>
+.loginBox {
+    background: rgba(0, 0, 0, 0) url("images/login_back.png") repeat scroll 0 0;
+    color: #ffffff;
+    font-family: Verdana,Geneva,sans-serif;
+    font-size: 12px;
+    height: 150px;
+    text-align: center;
+    width: 350px;
+</style>
+<script>
+function login(){
+	if(document.getElementById("inputEmail").value == "admin" && document.getElementById("inputPassword").value == "12345")
+		window.location.href = "/StockMarketAnalytics";
+	else
+		$("#myModal").modal("show");//alert("Invalid Username or Password");
+}
+</script>
+</head>
+
+<body>
+<center>
+<div class="" container-fluid"="" style="height: 60px; color: rgb(255, 255, 255); font-size: 40px; background-color: rgb(0, 0, 51); font-family: Georgia;">Stock Market Analysis</div>
+	<div class="container loginBox" style="top: 200px;left:500px; text-align: center; position: absolute;">
+
+      <form class="form-signin">
+        <!-- <h2 class="form-signin-heading">Please sign in</h2> -->
+        <label class="sr-only" for="inputEmail">Email address</label>
+        <input type="email" autofocus="" required="" placeholder="Email address" class="form-control" id="inputEmail">
+        <label class="sr-only" for="inputPassword">Password</label>
+        <input type="password" required="" placeholder="Password" class="form-control" id="inputPassword">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> <span style="color:#000">Remember me</span>
+          </label>
+        </div>
+        <button type="button" onclick="login()" style="background-color:rgb(0, 0, 51);color:#fff" class="btn btn-lg btn-primary btn-block">Sign in</button>
+      </form>
+
+    </div>
+</center>
+<video autoplay loop id="bgvid" style="height: 800px;">
+    <source src="background.mp4" type="video/mp4">
+</video>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog" style="top:150px">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:rgb(0, 0, 51);color:#fff">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign-In Error</h4>
+        </div>
+        <div class="modal-body">
+          <p style="color:red; text-align:center">Invalid Username or Password.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" style="background-color:rgb(0, 0, 51);color:#fff" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</body>
+
+</html>

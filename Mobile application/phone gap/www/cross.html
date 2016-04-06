@@ -1,0 +1,25 @@
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/tableau.js"></script>
+
+
+<div id="crosstableauViz" style="display:block;"></div>
+
+
+ <script>
+
+var placeholderDiv = document.getElementById("crosstableauViz");
+		var url = "https://10ay.online.tableau.com/#/site/dhvani/views/Book1/CrossSectorAnalysis?:iid=3";
+		var options = {
+			width: placeholderDiv.offsetWidth,
+			height: placeholderDiv.offsetHeight,
+			hideTabs: true,
+			hideToolbar: true,
+			onFirstInteractive: function () {
+				workbook = viz.getWorkbook();
+				activeSheet = workbook.getActiveSheet();
+			}
+		};
+		viz = new tableau.Viz(placeholderDiv, url, options);
+		$("#crosstableauViz").children().height("800px").width("980px");
+</script>
